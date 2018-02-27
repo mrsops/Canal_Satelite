@@ -4,12 +4,17 @@ public class Aplicacion {
     public static void main(String[] args) {
         String opcion;
         Scanner tc = new Scanner(System.in);
+        String nombre;
+        GrupoSat relacion = new GrupoSat();
 
         menu();
         do{
             opcion = tc.nextLine();
             switch (opcion){
                 case "1":
+                    limpiar();
+                    System.out.print("Introduce el nombre del Satelite: ");
+                    nombre = tc.nextLine();
 
 
                     break;
@@ -57,5 +62,11 @@ public class Aplicacion {
         System.out.println("3. Agregar codificacion a Desco");
         System.out.println("4. Atras");
 
+    }
+
+    public static void limpiar(){
+        for (int i = 0; i <50 ; i++) {
+            System.out.println("");
+        }
     }
 }
