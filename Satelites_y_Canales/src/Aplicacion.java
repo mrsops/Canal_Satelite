@@ -1,5 +1,40 @@
+import java.util.Scanner;
+
 public class Aplicacion {
     public static void main(String[] args) {
+        String opcion;
+        Scanner tc = new Scanner(System.in);
+
+        menu();
+        do{
+            opcion = tc.nextLine();
+            switch (opcion){
+                case "1":
+
+
+                    break;
+                case "2":
+
+
+                    break;
+                case "3":
+
+
+
+                    break;
+                case "4":
+
+
+                    break;
+                case "0":
+
+
+
+                    break;
+                default:
+                    break;
+            }
+        }while(!opcion.equals("0"));
     }
 
     public static void menu(){
