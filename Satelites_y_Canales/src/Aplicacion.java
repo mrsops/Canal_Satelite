@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.Scanner;
 
 public class Aplicacion {
@@ -193,7 +191,7 @@ public class Aplicacion {
                             case "4": //ELIMINAR CANAL
 
                                 if (satActivo!=null) {
-                                    satActivo.verCanales();
+                                    System.out.println(satActivo.verCanales());
                                     System.out.print("Selecciona un canal: ");
                                     puntero = tc.nextInt();
                                     tc.nextLine();
