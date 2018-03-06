@@ -45,4 +45,64 @@ public class Satelite {
     public int getId() {
         return id;
     }
+
+    public void anyadirCanal(Canal c){
+        String nom = c.getNombre();
+        int calidad = c.getCalidad();
+
+        if (!idCanalExiste(c)){
+            this.canales.add(c);
+        }else{
+            c = new Canal(nom, calidad);
+            anyadirCanal(c);
+        }
+    }
+
+    public String visualizar(){
+        String cadena="";
+        cadena += "Nombre: "+this.nombre+"  ID: "+this.id+"\n";
+        for (Canal c:this.canales) {
+            cadena+="\tCanal: "+c.getNombre()+"  Calidad "+c.verCalidad()+"\n";
+        }
+        return cadena;
+    }
+
+    public String verCanales(){
+        String cadena="";
+        for (int i = 0; i <this.canales.size() ; i++) {
+            cadena+="Nº "+i+"  Nombre: "+this.canales.get(i).getNombre();
+        }
+        return cadena;
+    }
+
+
+
+    private boolean idCanalExiste(Canal c){
+        int numCanal = c.getId();
+        for (int i = 0; i <this.canales.size() ; i++) {
+            if (this.canales.get(i).getId()==numCanal){
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    public void eliminaCanal(Canal c){
+
+    }
+
+    public ArrayList<Canal> getCanales() {
+        return canales;
+    }
+
+    public boolean canalExiste(String nombre){
+        for (Canal c:this.canales) {
+            if (c.getNombre().equals(nombre)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
